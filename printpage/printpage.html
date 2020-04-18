@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>
+        printPage</title></head>
+<body>
+        <div class="totall">
+        <div class="cherry" style="margin-top: 100px;">
+        <div class="row">
+    <div class="container col-sm-4 col-sm-offset-4 "  style="border:groove; box-shadow: 10px 10px 10px 10px; padding-right:  180px;padding-bottom: 50px; padding-top: 10px; background-color: burlywood;">
+    <ul class="nav nav-tabs">
+            <li class = "active"><a href="#Ourteam" data-toggle= "tab">Our team</a></li>
+            <li ><a href="#OurObjective" data-toggle= "tab">Our Objective</a></li>
+            <li><a href="#Squad"data-toggle= "tab">Squad</a></li>
+            </ul> 
+        <div class="tab-content">
+            <div id="Ourteam" class="tab-pane fade active in ">  <!- active-in>
+                <h1>HOME PAGE</h1>
+            </div>
+           
+            <div id="OurObjective" class="tab-pane fade  "> 
+                <h1>objectives</h1>                     <!- fade is used for fading effect of the text>
+            </div>                          
+   
+                <div id="Squad" class="tab-pane fade ">
+                <h1>squad</h1>
+            </div>
+        </div>
+            </div>
+        </div>
+        </div>
+        
+	<h2>HTML to PDF</h2>
+    <br>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<!-- here we call the function that makes PDF -->
+            </div>
+            <button id="print" onclick="getPDF()">downld pdf</button>
+	<a href="javascript:getPDF()">Download PDF file</a>
+    
+	<!-- these js files are used for making PDF -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="printThis.js"></script>
+    <script>
+        $('#print').click(function(){
+            $('.totall').printThis({
+        debug: false,               // show the iframe for debugging
+        importCSS: true,            // import parent page css
+        importStyle: true,         // import style tags
+        printContainer: true,       // print outer container/$.selector
+        loadCSS: "",                // path to additional css file - use an array [] for multiple
+        pageTitle: "",              // add title to print page
+        removeInline: false,        // remove inline styles from print elements
+        removeInlineSelector: "true",  // custom selectors to filter inline styles. removeInline must be true
+        printDelay: 333,            // variable print delay
+        header: null,               // prefix to html
+        footer: null,               // postfix to html
+        base: false,                // preserve the BASE tag or accept a string for the URL
+        formValues: true,           // preserve input/form values
+        canvas: false,              // copy canvas content
+        doctypeString: '<!DOCTYPE html>', // enter a different doctype for older markup
+        removeScripts: false,       // remove script tags from print content
+        copyTagClasses: false,      // copy classes from the html & body tag
+        beforePrintEvent: null,     // callback function for printEvent in iframe
+        beforePrint: null,          // function called before iframe is filled
+        afterPrint: null            // function called before iframe is removed
+            });
+        })
+    </script>
+</body>
+</html>
